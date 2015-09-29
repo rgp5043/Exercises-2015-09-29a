@@ -38,7 +38,13 @@ public class Grades {
     
     for (;;) {
     System.out.print("Enter a grade: ");
+    try{
     int grade = keyboard.nextInt();
+    }catch (Exception e) {
+            System.out.println("not an integer");
+            continue;
+    }
+        int grade = 0;
     if (grade >=0 && grade <=100) {
         total += grade;
         count++;
@@ -50,6 +56,7 @@ public class Grades {
     }
     total += grade;
   }
+    System.out.println("count is: " + count);
     System.out.println("Total is: " + total);
     System.out.println("average is: " + (float) total/count);
     }
