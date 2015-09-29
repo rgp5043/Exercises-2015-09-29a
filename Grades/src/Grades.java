@@ -27,11 +27,12 @@ public class Grades {
   public static void main(String[] args) {
 
     Scanner keyboard = new Scanner(System.in);
-
+    
+    for (;;) {
     System.out.print("Enter a grade: ");
     int grade = keyboard.nextInt();
     System.out.println("You entered: " + grade);
-
+    }
   }
 
 }
