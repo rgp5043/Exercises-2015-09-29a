@@ -1,4 +1,5 @@
 
+import static java.time.Clock.system;
 import java.util.Scanner;
 
 /*
@@ -28,11 +29,30 @@ public class Grades {
 
     Scanner keyboard = new Scanner(System.in);
     
+    int total = 0;
+    
+    int count = 0;
+    /*
+    *repeatedly prompt for grade
+    */
+    
     for (;;) {
     System.out.print("Enter a grade: ");
     int grade = keyboard.nextInt();
-    System.out.println("You entered: " + grade);
+    if (grade >=0 && grade <=100) {
+        total += grade;
+        count++;
+    } else if (grade != -1){
+    System.out.println ("value out of range");
+    }else{
+        break;
+    
+    }
+    total += grade;
+  }
+    System.out.println("Total is: " + total);
+    System.out.println("average is: " + (float) total/count);
     }
   }
+    
 
-}
